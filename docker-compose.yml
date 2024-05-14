@@ -10,7 +10,8 @@ services:
 
   backend:
     build: ./backend
-    container_name: backend
+    container_name: backend 
+    env_file: ./.env 
     depends_on:
       - db
     ports:
@@ -22,6 +23,7 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+
     ports:
       - '5432:5432'
     volumes:
