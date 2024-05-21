@@ -5,7 +5,7 @@ const app = express();
 const cors = require('cors');
 
 const port = 3000;
-
+console.log("dbp: ", process.env.DB_PASSWORD)
 const pool = new pg.Pool({
     user: 'secadv',
     host: 'db',

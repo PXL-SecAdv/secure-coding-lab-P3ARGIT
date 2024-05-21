@@ -11,7 +11,7 @@ services:
   backend:
     build: ./backend
     container_name: backend 
-    env_file: ./.env 
+    env_file: .env 
     depends_on:
       - db
     ports:
@@ -21,8 +21,8 @@ services:
     image: postgres
     container_name: db
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
 
     ports:
       - '5432:5432'
